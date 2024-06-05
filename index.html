@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Una Última Oportunidad</title>
+    <style>
+        body {
+            background-color: #FFEBEE;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background-color: #FFCDD2;
+            border: 2px solid #EF9A9A;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        h1 {
+            color: #D32F2F;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .button {
+            background-color: #F48FB1;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, width 0.3s, height 0.3s;
+        }
+        .button:hover {
+            background-color: #F06292;
+        }
+        #message {
+            display: none;
+            color: #C2185B;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dame una última oportunidad, por fa</h1>
+        <div class="button-container">
+            <button class="button" onclick="yesFunction()">Sí</button>
+            <button id="noButton" class="button" onclick="noFunction()">No</button>
+        </div>
+        <div id="message">Te amo muchísimo</div>
+    </div>
+
+    <script>
+        let message = document.getElementById('message');
+        let noButton = document.getElementById('noButton');
+
+        function yesFunction() {
+            message.style.display = 'block';
+        }
+
+        function noFunction() {
+            let newWidth = noButton.offsetWidth + 50;
+            let newHeight = noButton.offsetHeight + 50;
+
+            noButton.style.width = newWidth + 'px';
+            noButton.style.height = newHeight + 'px';
+
+            if (newWidth >= window.innerWidth || newHeight >= window.innerHeight) {
+                noButton.style.width = '100vw';
+                noButton.style.height = '100vh';
+                noButton.style.fontSize = '24px';
+            }
+        }
+    </script>
+</body>
+</html>
